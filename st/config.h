@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrainsMonoNL Nerd Font:pixelsize=18:antialias=true:autohint=true";
-//static char *font = "JetBrainsMonoNL Nerd Font:pixelsize=24:antialias=true:autohint=true";
+//static char *font = "JetBrainsMonoNL Nerd Font:pixelsize=18:antialias=true:autohint=true";
+static char *font = "JetBrainsMonoNL Nerd Font:pixelsize=24:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -97,7 +97,7 @@ unsigned int tabspaces = 8;
 float alpha_def;
 
 /* bg opacity */
-float alpha = .8;
+float alpha = 1.0;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -254,8 +254,8 @@ static Shortcut shortcuts[] = {
   { MODKEY,               XK_z,           chgalpha,       {.f = -0.05} }, /* Decrease opacity */
   { MODKEY,               XK_x,           chgalpha,       {.f = +0.05} }, /* Increase opacity */
 //{ MODKEY,               XK_bracketright,chgalpha,       {.f =  0} }, /* Reset opacity */
-  { Mod4Mask,             XK_c,           ttysend,        {.s =  "SARA\n"} },
-  { Mod4Mask,             XK_m,           ttysend,        {.s =  "make clean; make\n"} },
+  { Mod4Mask,             XK_c,           ttysend,        {.s =  "SARA\r"} },
+  { Mod4Mask,             XK_m,           ttysend,        {.s =  "make clean; make\r"} },
 };
 
 /*
