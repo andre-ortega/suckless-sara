@@ -110,7 +110,7 @@ static const Key keys[] = {
 //{ 0,                            XK_Super_L,spawn,          {.v = dmenucmd } },
   { MODKEY,                       XK_BackSpace,spawn,        {.v = dmenucmd } },
 	{ MODKEY,                       XK_space,  spawn,          {.v = termcmd } },
-  { MODKEY,                       XK_p,      spawn,          {.v = firefoxcmd } },
+//{ MODKEY,                       XK_p,      spawn,          {.v = firefoxcmd } },
   { MODKEY,                       XK_o,      spawn,          {.v = xbcmd } },
 //{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("st -e ranger")},
   { MODKEY,                       XK_f,      zoom,           {0} },
