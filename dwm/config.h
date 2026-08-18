@@ -28,7 +28,7 @@ static const unsigned int borderalpha = OPAQUE;
 /*	[SchemeSel]  = { col_gray4, col_gray2,  col_cyan  },*/
 /*};*/
 
-#include "/home/roe/git/suckless-hakirot/dwm/colors-wal-dwm.h"
+#include "colors-wal-dwm.h"
 
 static const unsigned int alphas[][3]      = {
     /*               fg      bg        border*/
