@@ -9,7 +9,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int usealtbar          = 1;        /* 1 means use non-dwm status bar */
 static const char *altbarclass      = "Polybar"; /* Alternate bar class name */
-static const char *altbarcmd        = "$HOME/.config/polybar/bar.sh"; /* Alternate bar launch command */
+static const char *altbarcmd        = "/home/[your_user]/.config/polybar/bar.sh"; /* Alternate bar launch command */
 static const int vertpad            = 0;       /* vertical padding of bar */
 static const int sidepad            = 0;       /* horizontal padding of bar */
 static const int user_bh            = 35;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
@@ -42,7 +42,7 @@ static const char *const autostart[] = {
 	NULL /* terminate */
 };
 
-/* tagging */ // TODO show all characters of my nerd font and finalize this list
+/* tagging */
 static const char *tags[] = { "󰣇", "󰈹", "", "", "", "", ""};
 
 static const Rule rules[] = {
@@ -87,7 +87,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *firefoxcmd[]  = { "firefox", NULL };
 static const char *xbcmd[]  = { "xb", NULL };
 
-/* Knob vol */
+/* Keeb Knob vol and multimedia key actions */
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
 static const char *upvol[] = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+1%", NULL };
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "-1%", NULL };
@@ -108,26 +108,21 @@ static const Key keys[] = {
   { 0,              XF86XK_AudioPrev,        spawn,          {.v = audioprev } },
   { 0,              XF86XK_AudioNext,        spawn,          {.v = audionext } },
 //{ 0,                            XK_Super_L,spawn,          {.v = dmenucmd } },
+//{ MODKEY,                       XK_p,      spawn,          {.v = firefoxcmd } },
   { MODKEY,                       XK_BackSpace,spawn,        {.v = dmenucmd } },
 	{ MODKEY,                       XK_space,  spawn,          {.v = termcmd } },
-//{ MODKEY,                       XK_p,      spawn,          {.v = firefoxcmd } },
   { MODKEY,                       XK_o,      spawn,          {.v = xbcmd } },
-//{ MODKEY|ShiftMask,             XK_f,      spawn,          SHCMD("st -e ranger")},
   { MODKEY,                       XK_f,      zoom,           {0} },
-//{ MODKEY|ShiftMask,             XK_F10,    spawn,          SHCMD("st -e cava")},
   { MODKEY|ShiftMask,             XK_BackSpace,      spawn,  SHCMD("shutdown now")},
-//{ MODKEY|ShiftMask,             XK_F5,     spawn,          SHCMD(" st -e bashtop")},
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
-//{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-//{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
   { MODKEY,                       XK_h,      focusstack,     {.i = -1 } },
   { MODKEY,                       XK_l,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_s,      incnmaster,     {.i = -1 } }, // incs number of windows on left layout
 	{ MODKEY,                       XK_a,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_j,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_k,      setmfact,       {.f = +0.05} },
-//  { MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
-//  { MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
+  { MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } }, // what is this
+  { MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
 //{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
@@ -139,7 +134,7 @@ static const Key keys[] = {
   { MODKEY,                       XK_e,      setlayout,      {.v = &layouts[1]} },
   { MODKEY,                       XK_r,      setlayout,      {.v = &layouts[2]} },
   { MODKEY,                       XK_Return, setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_f,  togglefloating, {0} },
+	{ MODKEY|ShiftMask,             XK_f,      togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
@@ -159,7 +154,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+ { MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
 /* button definitions */
