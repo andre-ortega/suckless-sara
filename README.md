@@ -1,7 +1,3 @@
-# Upstream
-
-github.com/Tahsin404/Suckless/
-
 
 # Demo
 
@@ -16,15 +12,12 @@ https://github.com/user-attachments/assets/c07f27e2-9173-4dd9-99bb-a6f63b1f210f
 # Requirements
 1. This Suckless repo
 2. Nerd Fonts
-3. jsoncpp, yajl, dwmipcpp libraries.
-4. [polybar-dwm-git](https://github.com/mihirlad55/polybar-dwm-module)
-5. [picom-ftlabs](https://github.com/FT-Labs/picom)
-6. [Ranger CLI](https://github.com/ranger/ranger) (File Manager)
-7. [Zen](https://zen-browser.app/) (Web Browser)
-8. [Spicetify](https://spicetify.app/) (Spotify customization)
-9. [Python-pywal](https://github.com/dylanaraps/pywal)
-10. Git
-11. NVIM with Lualine
+3. [polybar-dwm-git](https://github.com/mihirlad55/polybar-dwm-module)
+4. [picom-ftlabs](https://github.com/FT-Labs/picom)
+5. [Ranger CLI](https://github.com/ranger/ranger) (File Manager)
+6. [Python-pywal](https://github.com/dylanaraps/pywal)
+7. Git
+8. Neovim with Lualine
 
     cp sarax_lualine.diff $HOME/.local/share/nvim/lazy/lualine.nvim
     cd $HOME/.local/share/nvim/lazy/lualine.nvim
@@ -34,8 +27,8 @@ https://github.com/user-attachments/assets/c07f27e2-9173-4dd9-99bb-a6f63b1f210f
 13. ST (Simple/Suckless Terminal)
 
 # Installation
-1. Install your preferred Nerd Fonts. I used Lekton, Ubuntu, Hack and Monofur.
-2. Clone this repository (preferably in your home directory) `git clone https://github.com/Tahsin404/Suckless.git`. Do not compile just yet.
+1. Install your preferred Nerd Fonts. I used JetBrainsMono.
+2. Clone this repository (preferably in your home directory) `git clone https://github.com/hakirot/suckless-hakirot.git`. Do not compile just yet.
 3. Follow the instructions and install [polybar-dwm-git](https://github.com/pgrondek/polybar-dwm) from their git repo. You do not need to patch this dwm with IPC and anybar as they are already patched in. For Arch Users you can use the AUR:
    `yay -S polybar-dwm-git`
 4. Make a directory in .config named polybar then cd into Suckless and copy config.ini and bar.sh into it.
@@ -54,8 +47,6 @@ https://github.com/user-attachments/assets/c07f27e2-9173-4dd9-99bb-a6f63b1f210f
    # For Demo Look
    cp *.h $HOME/.cache/wal
    ```
->[!Note]
-  When applying colorscheme to dwm with wal, I got an error, this is because I don't have SchemeUrgent patch. If you decide to patch it in then you will have no problems otherwise you will have to manually add the lines from colors-wal-dwm.h
 
 6. Install [picom-ftlabs](https://github.com/FT-Labs/picom) for the exact animation shown in Demo. Make a folder in .config named *picom* and paste picom.conf there.
    ```
@@ -65,7 +56,4 @@ https://github.com/user-attachments/assets/c07f27e2-9173-4dd9-99bb-a6f63b1f210f
    cp picom.conf $HOME/.config/picom
    ```
 7. cd into the dwm, st and dmenu folders and `make` and `make clean install`
-8. You can also copy the ranger config files from the Suckless folder into your own ranger config folder if you want this look. And some shortcuts.
-9. Lualine diff/patch patch file should be applied here:
-
-        /home/roe/git/lualine-fork
+8. You can also copy the ranger config files from the Suckless folder into your own ranger config folder if you want this config.
