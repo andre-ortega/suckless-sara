@@ -1,0 +1,43 @@
+diff --git a/dunstrc b/dunstrc
+index 16c7337..4e9a5bb 100644
+--- a/dunstrc
++++ b/dunstrc
+@@ -111,7 +111,7 @@
+     frame_width = 3
+ 
+     # Defines color of the frame around the notification window.
+-    frame_color = "#708d84"
++    frame_color = "#dfb465"
+ 
+     # Size of gap to display between notifications - requires a compositor.
+     # If value is greater than 0, separator_height will be ignored and a border
+@@ -344,23 +344,23 @@
+ [urgency_low]
+     # IMPORTANT: colors have to be defined in quotation marks.
+     # Otherwise the "#" and following would be interpreted as a comment.
+-    background = "#0b0b0c"
+-    foreground = "#99948f"
++    background = "#0c0c0b"
++    foreground = "#d7b76c"
+     timeout = 5
+     # Icon for notifications with low urgency
+     default_icon = dialog-information
+ 
+ [urgency_normal]
+-    background = "#0b0b0c"
+-    foreground = "#99948f"
++    background = "#0c0c0b"
++    foreground = "#d7b76c"
+     timeout = 5
+     override_pause_level = 30
+     # Icon for notifications with normal urgency
+     default_icon = dialog-information
+ 
+ [urgency_critical]
+-    background = "#0b0b0c"
+-    foreground = "#99948f"
++    background = "#0c0c0b"
++    foreground = "#d7b76c"
+     frame_color = "#ff0000"
+     timeout = 0
+     override_pause_level = 60
