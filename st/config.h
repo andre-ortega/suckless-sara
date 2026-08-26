@@ -96,7 +96,7 @@ unsigned int tabspaces = 8;
 float alpha_def;
 
 /* bg opacity */
-float alpha = 1.0;
+float alpha = 0.9;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -254,6 +254,7 @@ static Shortcut shortcuts[] = {
   { MODKEY,               XK_x,           chgalpha,       {.f = +0.05} }, /* Increase opacity */
 //{ MODKEY,               XK_bracketright,chgalpha,       {.f =  0} }, /* Reset opacity */
   { Mod4Mask,             XK_c,           ttysend,        {.s =  "sara\r"} },
+  { Mod4Mask,             XK_d,           ttysend,        {.s =  "reskin"} },
   { Mod4Mask,             XK_m,           ttysend,        {.s =  "make clean; make\r"} },
 };
 
