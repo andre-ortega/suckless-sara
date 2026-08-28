@@ -254,7 +254,7 @@ static Shortcut shortcuts[] = {
   { MODKEY,               XK_x,           chgalpha,       {.f = +0.05} }, /* Increase opacity */
 //{ MODKEY,               XK_bracketright,chgalpha,       {.f =  0} }, /* Reset opacity */
   { Mod4Mask,             XK_c,           ttysend,        {.s =  "sara\r"} },
-  { Mod4Mask,             XK_d,           ttysend,        {.s =  "reskin"} },
+  { Mod4Mask,             XK_d,           ttysend,        {.s =  "reskin "} },
   { Mod4Mask,             XK_m,           ttysend,        {.s =  "make clean; make\r"} },
 };
 

@@ -3,7 +3,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 4;       /* gap pixel between windows */
+static const unsigned int gappx     = 0;       /* gap pixel between windows */
 static const unsigned int snap      = 16;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -83,6 +83,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", NULL};
+static const char *reskincmd[] = { "reskin", "-r", NULL};
 static const char *termcmd[]  = { "st", NULL };
 static const char *firefoxcmd[]  = { "firefox", NULL };
 static const char *xbcmd[]  = { "xb", NULL };
@@ -110,6 +111,7 @@ static const Key keys[] = {
 //{ 0,                            XK_Super_L,spawn,          {.v = dmenucmd } },
 //{ MODKEY,                       XK_p,      spawn,          {.v = firefoxcmd } },
   { MODKEY,                       XK_BackSpace,spawn,        {.v = dmenucmd } },
+  { MODKEY,                       XK_n,      spawn,          {.v = reskincmd } },
 	{ MODKEY,                       XK_space,  spawn,          {.v = termcmd } },
   { MODKEY,                       XK_o,      spawn,          {.v = xbcmd } },
   { MODKEY,                       XK_f,      zoom,           {0} },
@@ -144,6 +146,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
   { MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
   { MODKEY,                       XK_equal,  setgaps,        {.i = 0  } },
+  { MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = +1 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
