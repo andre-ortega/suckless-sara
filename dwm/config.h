@@ -21,7 +21,7 @@ static const char col_gray3[]       = "#c2a6f7";
 static const char col_gray4[]       = "#9064e3";
 static const char col_cyan[]        = "#9daafa";
 static const unsigned int baralpha = 0xd0;
-static const unsigned int borderalpha = OPAQUE;
+static const unsigned int borderalpha = TRANSPARENT;
 /*static const char *colors[][3]      = {*/
 	/*               fg         bg         border   */
 /*	[SchemeNorm] = { col_gray3, col_gray1, col_gray1 },*/
@@ -51,7 +51,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	{ "Gimp",     NULL,       NULL,       0,            0,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
@@ -84,6 +84,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", NULL};
 static const char *reskincmd[] = { "reskin", "-r", NULL};
+static const char *polybarcmd[] = { "bar.sh", "-r", NULL};
 static const char *termcmd[]  = { "st", NULL };
 static const char *firefoxcmd[]  = { "firefox", NULL };
 static const char *xbcmd[]  = { "xb", NULL };
@@ -113,6 +114,7 @@ static const Key keys[] = {
   { MODKEY,                       XK_BackSpace,spawn,        {.v = dmenucmd } },
   { MODKEY,                       XK_n,      spawn,          {.v = reskincmd } },
 	{ MODKEY,                       XK_space,  spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_space,  spawn,          {.v = polybarcmd } },
   { MODKEY,                       XK_o,      spawn,          {.v = xbcmd } },
   { MODKEY,                       XK_f,      zoom,           {0} },
   { MODKEY|ShiftMask,             XK_BackSpace,      spawn,  SHCMD("shutdown now")},
